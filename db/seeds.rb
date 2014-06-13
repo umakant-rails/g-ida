@@ -9,7 +9,7 @@
 Role.create(:name => "Admin") if Role.where(:name => "Admin").blank?
 Role.create(:name => "Member") if Role.where(:name => "Client").blank?
 admin_role_id = Role.where(:name => "Admin").first.id rescue nil
-demoUser = User.create(:email => "demo@example.com", :password => "demouser", :role_id => admin_role_id )
+demoUser = User.create(:email => "evoting@gmail.com", :password => "evote123", :role_id => admin_role_id )
 
 if Poll.where(:title => "Volunteer Opportunities").blank?
   poll = Poll.create(:title => "Volunteer Opportunities", :info => "Please sign up for any of the jobs below.") 
