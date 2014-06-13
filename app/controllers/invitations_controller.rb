@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   before_filter :authenticate_user!
-    
+
   def index
     @invitations = []
     if current_user.role.name == 'Admin'
