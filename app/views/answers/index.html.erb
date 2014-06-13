@@ -1,0 +1,36 @@
+<h3>Listing answers</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Poll</th>
+      <th>Created At</th>
+      <th>Update At</th>
+      <th class="action">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @answers.present? %>
+      <% @answers.each do |answer| %>
+        <tr>
+          <td><%= answer.answer %></td>
+          <td><%= answer.poll.title %></td>
+          <td><%= answer.created_at %></td>
+          <td><%= answer.updated_at %></td>
+          <td>
+            <%= link_to 'Show', answer, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_answer_path(answer), class: "btn btn-primary" %>
+            <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5"><center>There is no answers available.</center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @answers %>
+<br>
+<%#= link_to 'New Answer', new_answer_path %>

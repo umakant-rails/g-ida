@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      .row { margin-left: -15px; margin-right: -15px; }
+      .email-header{ background-color: #000000; border-radius: 4px; min-height: 36px; padding: 14px 0 !important;
+        margin-bottom: 15px; }
+      .email-body{ margin: 30px 5px 0; }
+    </style>
+  </head>
+  <body>
+    <div class= "row">
+      <div class="span12.email-header">
+        <div class="pull-left">
+          <a class="span12 text-center" href="/" >
+            <image class="logo" alt="Logo" src="/assets/survey.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="email-body">
+         Hi <%= @invitation.email.split('@')[0] %>
+        <br/>  
+        <br/>
+        you are invited to vote for your valuable opinion by Survey website Admin.
+        <br/>
+        Polls questions listed here for providing your valueable reponse.
+        <%  @ipolls && @ipolls.each do |ipoll| %>
+            <a href="http://localhost:3000/poll/<%= ipoll.poll_id %>/vote?email=<%= ipoll.invitation.email %>&tkn=<%= ipoll.token %>"><%= ipoll.poll.title %></a> <br/>
+        <% end %>
+        <br/>
+        <br/>
+        Regards,
+        <br/>
+        <%= "Survey Website Admin" %>
+      </div>
+    </div>
+  </body>
+</html>

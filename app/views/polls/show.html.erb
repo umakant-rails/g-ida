@@ -1,0 +1,33 @@
+<h3> Poll Details </h3>
+<div class="border"></div>
+<div>
+  <div class="row">
+    <div class="span2 textR">
+      <strong>Title:</strong>
+    </div>
+    <div class="span8">
+      <%= @poll.title %>
+    </div>
+  </div>
+  <br/>
+  <% @poll.answers.sort.each_with_index do |answer, index|%>
+    <div class="row">     
+      <div class="span2 textR">
+        <strong><%= "Answers" if index == 0 %></strong>
+      </div>
+      <div class="span8">
+        <%= answer.answer %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="border"></div>
+<div class="row">
+  <div class="span2"></div>
+  <div class="span8">
+    <% if current_user.present? %>
+      <%= link_to 'Edit', edit_poll_path(@poll), class: "btn btn-primary" %>
+      <%= link_to 'Back', polls_path, class: "btn btn-primary"  %>
+    <% end %>
+  </div>
+</div>

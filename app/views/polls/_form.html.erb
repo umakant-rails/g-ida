@@ -1,0 +1,39 @@
+<%= nested_form_for @poll do |f| %>
+  <div class="row">
+    <div class="span2 textR">
+      Title
+    </div>
+    <div class="span8">
+      <%= f.text_field :title, class: "span8" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 textR"></div>
+    <div class="span8">
+      <%= f.check_box :has_multiple_answer, :style => "margin-top: -2px;" %>
+      &nbsp;&nbsp;&nbsp;<span>Has multiple answer</span>
+    </div>
+  </div>
+  <br/>
+  <div class="row" id="answers">
+    <div class="span2 textR"> Answers </div>
+    <div class="span8">
+      <%= f.fields_for :answers do |builder| %>
+        <%= render "polls/answer", :f => builder %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 textR"></div>
+    <div class="span8">
+      <%= f.link_to_add "+ Add more answer", :answers %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="span2 textR"></div>
+    <div class="span8">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

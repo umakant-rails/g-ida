@@ -1,0 +1,30 @@
+<div class="row-fluid">
+  <div class="span4">
+  </div>
+  <div class="span8">
+    <h4>Update User Details</h4>
+  </div>
+</div>
+<div class="border"></div>
+<div class="row-fluid">
+  <div class="span2"></div>
+  <div class="span8 profile-right">
+    <div class="usr-info-body">
+      <%= form_for(current_user, :as => current_user.class.name.downcase, :url => registration_path(current_user.class.name.downcase)) do |f| %>
+        <%= devise_error_messages! %>
+        <%= render partial: "user_info", locals: {f: f}%>
+        <% if params[:password]== "true" %>
+          <%= render partial: "password_management", locals: {f: f, is_disabled: false}%>
+        <% end %>
+        <div class="border"></div>
+        <div class="row-fluid">
+          <div class="span2"></div>
+          <div class="span10">
+            <%= f.submit "Submit", class: "btn btn-primary", style: "padding: 7px 50px;" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="span1"></div>
+</div>

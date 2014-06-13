@@ -1,0 +1,38 @@
+<h3> Poll Details </h3>
+<div class="border"></div>
+<%= form_tag(response_to_poll_path(@poll), method: :post)  do %>
+  <div>
+    <div class="row">
+      <div class="span2 textR">
+        <strong>Title:</strong> 
+      </div>
+      <div class="span8">
+        <%= @poll.title %>
+      </div>
+    </div>
+    <br/>
+    <input type="hidden" name="responses[token]"  value="<%= params[:tkn] %>">
+    <% @poll.answers.sort.each_with_index do |answer, index|%>
+      <div class="row">     
+        <div class="span2 textR">
+          <strong><%= "Answers" if index == 0 %></strong>
+        </div>
+        <div class="span8">
+          <% if @poll.has_multiple_answer %>
+            <%= check_box_tag "responses[answer_ids][]", answer.id, false, style: "margin-top:-1px;" %>&nbsp;&nbsp;&nbsp;<%= answer.answer %>
+          <% else %>
+             <%= radio_button_tag "responses[answer_id]", answer.id, false, style: "margin-top:-1px;" %>&nbsp;&nbsp;&nbsp;<%= answer.answer %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="border"></div>
+  <div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+      <%= submit_tag "Submit vote", class: "btn btn-primary" %>
+      <%= link_to 'Back', polls_path, class: "btn btn-primary"  %>
+    </div>
+  </div>
+<% end %>

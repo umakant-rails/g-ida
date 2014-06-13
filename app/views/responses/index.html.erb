@@ -1,0 +1,45 @@
+<h3>Listing responses</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Polls</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @polls.present? %>
+      <% @polls.uniq.each do |poll| %>
+        <tr>
+          <td>
+            <%= poll.title %><br/>
+            <a class="accordion-toggle" href="javascript:void(0);" data-id="#collapse<%= poll.id %>">
+              responses(<%= poll.responses.size %>)
+            </a>
+            <div id="collapse<%= poll.id %>" class="accordion-body mrgn-top collapse">
+              <div class="accordion-inner">
+                <% poll_response = poll.responses.select("answer_id, count(*) as count").group("answer_id") %>
+                <% poll_response && poll_response.each do | presponse | %>
+                  <%= presponse.answer.answer %>&nbsp;-&nbsp;<%= presponse.count %><br/>
+                <% end %>
+              </div>
+            </div>
+          </td>
+          <td>
+            <%= link_to 'Show', poll, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_poll_path(poll), class: "btn btn-primary" %>
+            <%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4"><center>There is no response available.</center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Response', new_response_path %>

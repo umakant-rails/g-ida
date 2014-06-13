@@ -1,0 +1,38 @@
+// Place all the styles related to the poll controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-img-bx{
+  height:110px;
+  width:110px;
+  border:1px solid lightgray;
+  margin-left:5px;
+}
+
+.profile-right{
+  #border-left: 1px solid #D3D3D3;
+  border-radius: 4px;
+  #box-shadow: 0 0 8px 1px #888888;
+  margin-left: 0 !important;
+  min-height: 400px !important;
+  #padding: 25px;
+}
+
+.usr-info-heading{
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  #border-radius: 4px;
+  background-color: #F4F4F4;
+}
+
+.usr-info-body{
+  padding: 5px 10px;
+}
+
+#profile{
+  background-color: #F4F4F4;
+}
+
+.info_block, .password_info_block{
+  margin: 10px 20px;
+}

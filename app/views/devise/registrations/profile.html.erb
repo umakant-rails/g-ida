@@ -1,0 +1,68 @@
+<%
+  flash_err = flash[:error]
+  enabled_tab = ''
+  
+  if flash_err && flash_err.downcase.index('password') >= 0 
+    enabled_tab = "#password_management"
+  else
+    enabled_tab = "#user_info"
+  end
+%>
+<div class="row-fluid">
+  <div class="span4"></div>
+  <div class="span8"><h4>Your Profile</h4></div>
+</div>
+<div class="border"></div>
+<div class="span1"></div>
+<div class="span10">
+  <ul class="nav nav-tabs" id="profile">
+    <li class="<%= "active" if (enabled_tab == "#user_info") %>"><a href="#user_info" data-toggle="tab">User Infomation</a></li>
+    <li class="<%= "active" if (enabled_tab == "#password_management") %>"><a href="#password_management" data-toggle="tab">Password management</a></li>
+    <li class="<%= "active" if (enabled_tab == "#user_activity") %>"><a href="#user_activity" data-toggle="tab">Activity</a></li>
+  </ul>
+  <div class="row-fluid">
+    <div class="span1"></div>
+    <div class="span10">
+      <div class="profile-right">
+        <div class="usr-info-body">
+          <div class="tab-content">
+            <div class="tab-pane <%= (enabled_tab == "#user_info") ? "active" : "fade" %>" id="user_info">
+              <%= form_for(current_user, :as => current_user.class.name.downcase, :url => registration_path(current_user.class.name.downcase)) do |f| %>
+                <%= render partial: "clients/user_info", locals: {f: f, is_disabled: true}%>
+              <% end %>
+              
+              <div class="info_block">
+                <a href="<%= edit_user_registration_path(:password => false) %>">Update user</a><br/>
+                <a href="<%= edit_user_registration_path(:password => true) %>" >Update user with password</a>
+              </div>
+              <div class="clearboth"></div>
+            </div>
+            <div class="tab-pane <%= (enabled_tab == "#password_management") ? "active" : "fade" %>" id="password_management">
+              <%= form_for(current_user, :as => current_user.class.name.downcase, :url => registration_path(current_user.class.name.downcase)) do |f| %>
+                <%= render partial: "clients/password_management", locals: {f: f}%>
+                <div class="row-fluid">
+                  <div class="span2"></div>
+                  <div class="span10">
+                    <%= f.submit "Submit", class: "btn btn-primary", style: "padding: 7px 50px;" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            
+            <div class="tab-pane <%= (enabled_tab == "#user_activity") ? "active" : "fade" %>" id="user_activity">
+              <img src="/assets/work_progress.jpeg" width="800px" height="500px" alt="Development is in Progress."/>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="span1"></div>  
+  </div>
+</div>
+<div class="span1"></div>
+<script>
+    (function () {
+        $('#profile a[href="#user_info"]').tab('show');
+    });
+  </script>

@@ -1,0 +1,30 @@
+<div class="usr-info-heading">
+  <strong>User Infomation</strong>
+</div>
+<div class="clearboth"></div>
+<div class="info_block">
+  <div class="row-fluid">
+    <%= f.label :email %>
+    <div class="clearboth"></div>
+    <%= f.email_field :email, class: "span6", disabled: true %>
+  </div>
+  <div class="clearboth"></div>
+  <div class="row-fluid">
+    <%= f.label :username %>
+    <div class="clearboth"></div>
+    <%= f.text_field :username, class: "span6", disabled: is_disabled %>
+  </div>
+  <div class="clearboth"></div>
+  <div class="row-fluid">
+    <%= f.label :first_name %>
+    <div class="clearboth"></div>
+    <%= f.text_field :first_name, class: "span6", disabled: is_disabled %>
+  </div>
+  <div class="clearboth"></div>
+  <div class="row-fluid">
+    <%= f.label :last_name %>
+    <div class="clearboth"></div>
+    <%= f.text_field :last_name, class: "span6", disabled: is_disabled %>
+  </div>
+</div>
+<div class="clearboth"></div>

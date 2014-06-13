@@ -1,0 +1,25 @@
+<%= form_for (@answer) do |f| %>
+  <div class="row">
+    <div class="span2 textR">
+      <%= f.label :poll_id %><br>
+    </div>
+    <div class="span8">
+      <% answers_polls = Hash[@polls.map{|poll| [poll.title, poll.id]}] %>
+      <%= f.select :poll_id, options_for_select(answers_polls, params[:id]), :prompt => "Select poll", :autofocus => true %>
+    </div>
+  </div>
+   <div class="row">
+    <div class="span2 textR">
+      <%= f.label :answer %><br>
+    </div>
+    <div class="span8">
+      <%= f.text_field :answer %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 textR"></div>
+    <div class="span8">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
