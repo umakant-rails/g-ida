@@ -1,0 +1,68 @@
+.tagit_invite_user_ul {
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  list-style: none outside none;
+  overflow: auto;
+  padding: 1px 5px;
+  height: 65px;
+  margin-left: 0px;
+}
+ul, ol {
+  margin-bottom: 10px;
+  margin-top: 0;  
+}
+#tagit_txt_input, #tagit_txt_input:focus {
+  border: medium none;
+  float: left;
+  margin-top: 1px;
+  width: 220px;
+  height: 18px;
+  font-size: 15px;
+}
+.invite_hd_txt{
+  //margin-left: 25px;
+  font-size: 17px;
+  color: #5682DA;
+}
+.mrgn-lft{
+  margin-left: 10px;
+}
+.tagit_invite_user_ul li:first-child {
+  margin-left: 0;
+}
+.tagit_invite_user_ul li {
+  background-color: #F6F6F6;
+  border: 1px solid #D3D3D3;
+  border-radius: 2px;
+  float: left;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 0.2em 5px 0.2em 0.5em;
+}
+.tagit_invite_user_ul li {
+  font-size: 15px;
+  list-style-type: none !important;
+}
+.tagit_invite_user_ul li:last-child {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+}
+.tagit-close{
+  color: #0044CC;
+  margin-left: 3px;
+}
+#error_msg {
+  color: #FF0000;
+  display: none;
+  margin-bottom: 5px;
+  padding: 5px;
+  margin-left: 20px;
+}
+.custom-btn{
+  background-color: #409DE9;
+  padding: 7px 18px;
+  color: #FFFFFF;
+  border: none;
+  width: 120px;
+}

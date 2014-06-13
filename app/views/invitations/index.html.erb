@@ -1,0 +1,42 @@
+<h3>Listing Invitation</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="3">
+        <center>INVITATION DETAILS</center>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @invitations.present? %>
+      <tr>
+        <td style="width: 33%;">
+          <div class="invitation_emails_div"><strong>Invited peoples email</strong></div>
+          <% @invitations[0..10].each_with_index do |invitation, index| %>
+            <div class="invitation_emails_div <%= "selected" if index == 0 %>"
+              data-index="<%= index %>" data-invitation_id="<%= invitation.id %>">
+              <%= invitation.email %>                                            
+            </div>
+          <% end %>
+        </td>
+        <td style="width: 67%;">
+          <div class="invitation_emails_div" style="margin-bottom: 7px;">
+            <strong>Polls for which people invite</strong> 
+          </div>
+          <div class="floatL" style="margin-right: -8px;">
+            <image src="/assets/callOut-arrow.png" class="floatL" id="indicator_img" width="30px" height="35px" style="margin-left: -7px;"/>
+          </div>
+          <div id="invitation_poll_list" style="height: <%= (@invitations.length * 35 ) %>px;overflow: auto; max-height:345px;">
+            <% invitation_polls =  @invitations[0].polls rescue []%>
+            <%= render :partial => 'invitations/invited_user_polls', :locals => { :polls => invitation_polls }%>
+          </div>
+        </td>
+      </tr>
+    <% else %>
+      <tr>
+        <td colspan="2"><center>There is no invitation available.</center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Invite to peoples', new_invitation_path %>

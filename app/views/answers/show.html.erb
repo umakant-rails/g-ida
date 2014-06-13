@@ -1,0 +1,28 @@
+<h3> Answer Details </h3>
+<div class="border"></div>
+<div>
+  <div class="row">
+    <div class="span2 textR">
+      <strong>Answer:</strong>
+    </div>
+    <div class="span8">
+      <%= @answer.answer %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 textR">
+      <strong>Poll:</strong>
+    </div>
+    <div class="span8">
+      <%= @answer.poll.title %>
+    </div>
+  </div>
+</div>
+<div class="border"></div>
+<div class="row">
+  <div class="span2"></div>
+  <div class="span8">
+    <%= link_to 'Edit', edit_answer_path(@answer), class: "btn btn-primary" %> 
+    <%= link_to 'Back', answers_path, class: "btn btn-primary"  %>
+  </div>
+</div>

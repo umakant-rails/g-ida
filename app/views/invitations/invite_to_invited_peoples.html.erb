@@ -1,0 +1,45 @@
+<h3>Invite to invited peoples</h3>
+<div class="border"></div>
+<br/>
+<%= form_tag('/invitations', method: :post) do -%>
+  <div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+      <%= select_tag "invite[emails]", options_from_collection_for_select(@invitations, "email", "email"), class: "span8", prompt: "Select email", id: "invitation_emails"%>
+    </div>
+    <div class="span2"></div>
+  </div> 
+  <div class="clearboth"></div>
+  <div class="row">
+    <div class="span2"></div>
+    <div class="span8" id="polls_list_block">
+      <div class="poll_list_header">
+        Selected polls for invitations
+      </div>
+      <div id="polls_list_div" style="display:none;">
+      </div>
+    </div>
+    <div class="span2"></div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="row" id="poll_select_box_row">
+    <div class="span2"></div>
+    <input type="hidden" id="invite_polls_list" name="invite[polls]"> 
+    <div class="span8 poll_select_bx_div" id="poll_for_invited_peoples">
+      <%= render partial: "invitations/poll_select_box" , locals: {polls: @polls} %>
+    </div>
+    <div class="span2"></div>
+  </div>
+  <div class="row">
+    <div class="span2"></div>
+    <div class="span8">
+      <input  type="submit" id="invite_peoples_for_poll" class="custom-btn floatR mrgn-lft" 
+        value = "Invite People" />
+      <a href="<%= invite_to_invited_peoples_invitations_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a> 
+      
+    </div>
+    <div class="span2"></div>
+  </div>
+<% end -%>
+<br/>
+<div class="border"></div>

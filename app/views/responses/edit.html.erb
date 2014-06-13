@@ -1,0 +1,11 @@
+<h3>Editing response</h3>
+<div class="border"></div>
+<%= render 'form', locals: {:roles => @roles} %>
+<div class="border"></div>
+<div class="row">
+  <div class="span2"></div>
+  <div class="span8">
+    <%= link_to 'Show', @response, class: "btn btn-primary" %> 
+    <%= link_to 'Back', responses_path, class: "btn btn-primary" %>
+  </div>
+</div>

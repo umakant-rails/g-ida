@@ -1,0 +1,28 @@
+<h3> Response Details </h3>
+<div class="border"></div>
+<div>
+  <div class="row">
+    <div class="span2 textR">
+      <strong>Answer:</strong>
+    </div>
+    <div class="span2">
+      <%= @response.answer %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 textR">
+      <strong>User name:</strong>
+    </div>
+    <div class="span2">
+      <%= get_user_name_by_email(@response.user.email) %>
+    </div>
+  </div>
+</div>
+<div class="border"></div>
+<div class="row">
+  <div class="span2"></div>
+  <div class="span8">
+    <%= link_to 'Edit', edit_response_path(@response), class: "btn btn-primary" %> 
+    <%= link_to 'Back', responses_path, class: "btn btn-primary"  %>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+$("#invitation_poll_list").html("<%= escape_javascript render(:partial => 'invitations/invited_user_polls', :locals => { :polls => @polls }) %>");
+$("#invite_people_modal_box").modal('show')

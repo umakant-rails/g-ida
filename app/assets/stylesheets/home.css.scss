@@ -1,0 +1,68 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.custom-navbar{
+  padding: 0 50px !important; 
+}
+
+.navbar-menu{
+  margin-top: 25px !important; 
+  li{
+    font-size: 14px;
+  }
+}
+
+.border{
+  border-bottom: 1px solid #D3D3D3;
+  margin: 15px 0;
+}
+
+.home-container{
+  margin-top: 70px;
+  min-height:495px;
+  padding: 20px;
+}
+
+.footer{
+  padding: 15px 0px; background-color: #F2F2F2;
+}
+
+
+.sign_in_top_mrgn{
+  margin-top: 70px;
+}
+
+.sign_up_top_mrgn{
+  margin-top: 30px;
+}
+
+.panel-default {
+  border-color: #DDDDDD;
+}
+.panel {
+  background-color: #FFFFFF;
+  /*border: 1px solid rgba(0, 0, 0, 0);*/
+  border-radius: 4px;
+  /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);*/
+  margin-bottom: 20px;
+}
+.panel-default > .panel-heading {
+  background-color: #F5F5F5;
+  border-color: #DDDDDD;
+  color: #333333;
+}
+.panel-heading {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 10px 15px;
+}
+.panel-body {
+  border-bottom: 2px solid #F8F8F8;
+  border-left: 2px solid #F8F8F8;
+  border-right: 2px solid #F8F8F8;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 15px;
+}
