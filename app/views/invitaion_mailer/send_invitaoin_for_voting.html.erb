@@ -24,7 +24,7 @@
           <br/>
           <div style="clear: both;margin-top: 6px;"></div>
           <%  @ipolls && @ipolls.each do |ipoll| %>
-              <%= ipoll.poll.title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://fierce-hamlet-1335.herokuapp.com/poll/<%= ipoll.poll_id %>/vote?email=<%= ipoll.invitation.email %>&tkn=<%= ipoll.token %>">Click here for voting</a> <br/>
+              <%= ipoll.poll.title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://evoting.herokuapp.com/poll/<%= ipoll.poll_id %>/vote?email=<%= ipoll.invitation.email %>&tkn=<%= ipoll.token %>">Click here for voting</a> <br/>
           <% end %>
         </div>
         <br/>
