@@ -97,11 +97,16 @@ class PollsController < ApplicationController
 
   def response_to_poll
     @poll = Poll.where("id = ?", params[:id].to_i).first
-    if current_user.present?  && current_user.id == @poll.user_id
+    invitation_poll = @poll.invitation_polls.where(:token => params[:responses][:token], :is_enabled => true).first
+
+    if  invitation_poll.blank?
+      flash[:info] = "you have voted for this question."
+      redirect_to :back and return
+    elsif invitation_poll.invitation && (invitation_poll.invitation.email == current_user.email)
       flash[:info] = "you can not vote for your question."
       redirect_to :back and return
     end
-    
+
     begin
       responses_pameteres = responses_params
       if @poll.has_multiple_answer
@@ -110,11 +115,11 @@ class PollsController < ApplicationController
           response_arr << {answer_id: answer_id.to_i, poll_id: @poll.id} if answer_id.present?
         end
         if Response.create!(response_arr)
-          @poll.invitation_polls.where(:token => params[:responses][:token]).first.update_column(:is_enabled, false)
+          invitation_poll.update_column(:is_enabled, false)
         end
       else
         if @poll.responses.create!(answer_id: responses_pameteres[:answer_id])
-          @poll.invitation_polls.where(:token => params[:responses][:token]).first.update_column(:is_enabled, false)
+          invitation_poll.update_column(:is_enabled, false)
         end
       end
     rescue Exception => exp
