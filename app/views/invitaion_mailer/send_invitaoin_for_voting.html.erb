@@ -1,57 +1,40 @@
 <html>
   <head>
-    <style>
-      .row { margin-left: -15px; margin-right: -15px; }
-      .email-header{ background-color: #F4F4F4; border-radius: 4px; min-height: 36px; padding: 3px 0 !important;
-        margin-left: 0 !important;}
-      .email-body{ margin: 20px 0; padding-left: 25px; }
-      .message_div{
-        padding-left: 15px;
-      }
-      .email-footer{
-        background-color: #F4F4F4; border-radius: 4px; padding: 12px 0 !important;
-        margin-left: 0 !important;
-      }
-      .header-txt{
-        font-size: 20px;
-        font-weight: bold;
-        padding-top: 12px;
-      }
-    </style>
   </head>
   <body>
-    <div class= "row">
-      <div class="span12 email-header">
-        <div class="pull-left span2">
-          <a class="span2 text-center" href="/"  style="margin-left: -1px;">
-            <image class="logo" alt="Logo" src="../assets/survey.png" width="120px" height="50px"/>
+    <div style="margin-left: -15px; margin-right: -15px;">
+      <div style="background-color: #F4F4F4; border-radius: 4px; min-height: 36px; padding: 6px 0 !important;
+        margin-left: 0 !important;width:950px;">
+        <div style="width: 140px; float: left; margin-left: 10px;">
+          <a href="/"  style="width: 140px;margin-left: -1px;text-align:center;">
+            <image class="logo" alt="Logo" src="<%= Rails.root.to_s %>/assets/survey.png" width="120px" height="50px" style="margin: -5px 0;"/>
           </a>
         </div>
-        <div class="pull-left offset3 span6 header-txt">Polling Invitaion</div>
+        <div style="float: left; margin-top: 8px; font-size: 20px; font-weight: bold; margin-left: 375px;">E-Polling Invitaion</div>
       </div>
-      <div class="clearboth"></div>
-      <div class="email-body">
+      <div style="clear: both;margin-top: 6px;"></div>
+      <div style="margin: 20px 0; padding-left: 25px;">
          Hi <%= @invitation.email.split('@')[0] %>
         <br/>  
-        <div class="clearboth"></div>
-        <div class="message_div">
+        <div style="clear: both;margin-top: 6px;"></div>
+        <div style="padding-left: 15px;">
           you are invited to vote for your valuable opinion by Survey website Admin.
           <br/>
           Polls questions listed here for providing your valueable reponse.
           <br/>
-          <div class="clearboth"></div>
+          <div style="clear: both;margin-top: 6px;"></div>
           <%  @ipolls && @ipolls.each do |ipoll| %>
               <%= ipoll.poll.title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost:3000/poll/<%= ipoll.poll_id %>/vote?email=<%= ipoll.invitation.email %>&tkn=<%= ipoll.token %>">Click here for voting</a> <br/>
           <% end %>
         </div>
         <br/>
-        <div class="clearboth"></div>
+        <div style="clear: both;margin-top: 6px;"></div>
         Regards,
         <br/>
         <%= "Evoting Website Admin" %>
       </div>
-      <div class="clearboth"></div>
-      <div class="span12 email-footer">
+      <div style="clear: both;margin-top: 6px;"></div>
+      <div style="background-color: #F4F4F4; border-radius: 4px; padding: 12px 0 !important;margin-left: 0 !important;">
         <center>powered by @survey admin</center>
       </div>
     </div>
