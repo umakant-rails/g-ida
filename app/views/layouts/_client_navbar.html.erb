@@ -15,7 +15,11 @@
           <li id="fat-menu" class="dropdown">
             <a href="javscript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> Poll <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Create Poll", new_poll_path %></li>
+              <li><%= link_to "Create Optional Poll", new_poll_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Create Rating Poll", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Create Descriptive Poll", '#' %></li>
               <li class="divider"></li>
               <li><%= link_to "Poll List", polls_path %></li>
             </ul>
