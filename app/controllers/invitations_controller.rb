@@ -28,14 +28,14 @@ class InvitationsController < ApplicationController
           polls_ids = params[:invite][:polls].split(",").uniq
           invitation_poll_arr = []
           polls_ids.each do |poll_id|
-            token =  token = SecureRandom.uuid
+            token = SecureRandom.uuid
             if InvitationPoll.where(invitation_id: invitation.id, poll_id: poll_id.to_i).blank?
               invitation_poll_arr << { invitation_id: invitation.id, poll_id: poll_id.to_i,
                 token: token, is_enabled: true}
             end
           end
           if invitation_poll_arr.present?
-            ipolls = InvitationPoll.create!(invitation_poll_arr) 
+            ipolls = InvitationPoll.create!(invitation_poll_arr)
             InvitaionMailer.send_invitaoin_for_voting(invitation, ipolls).deliver
           end
         end
@@ -61,18 +61,18 @@ class InvitationsController < ApplicationController
   def fetch_polls_to_invited_people
     if current_user.role.name == "Admin"
       assign_polls = Invitation.where("email = ? ", params[:email]).first.polls
-      all_polls = Poll.all 
+      all_polls = Poll.all
       @polls_to_invited_peoples = (all_polls - assign_polls)
     else
       assign_polls = Invitation.where("email = ? ", params[:email]).first.polls.where("user_id = ? ", current_user.id)
-      all_polls = current_user.polls  
+      all_polls = current_user.polls
       @polls_to_invited_peoples = (all_polls - assign_polls)
     end
   end
-  
+
   def invitations_polls
     invitation = Invitation.where("id = ? ", params[:id]).first
     @polls = invitation.polls
   end
-  
+
 end

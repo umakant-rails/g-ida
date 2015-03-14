@@ -1,7 +1,7 @@
 class PollsController < ApplicationController
   before_filter :authenticate_user!, except: [ :show, :vote, :response_to_poll]
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /polls
   # GET /polls.json
   def index
@@ -37,7 +37,7 @@ class PollsController < ApplicationController
     params[:poll][:answers_attributes].each{ |k ,v | v[:answer] = v[:answer].capitalize }  if params[:poll][:answers_attributes].present?
     params[:poll][:user_id] = current_user.id
     @poll = Poll.new(poll_params)
-  
+
     respond_to do |format|
       if @poll.save
         format.html { redirect_to @poll, notice: 'Poll was successfully created.' }
@@ -76,12 +76,13 @@ class PollsController < ApplicationController
     end
   end
 
+  # open a page to vote perticular question
   def vote
     @poll = nil
     if current_user.blank?
       invitation = Invitation.where(:email => params[:email]).first
       invitation_polls =[]
-      
+
       if invitation.present?
         invitation_polls = invitation.invitation_polls.where(:token => params[:tkn], :is_enabled => true)
       end
@@ -127,7 +128,7 @@ class PollsController < ApplicationController
       redirect_to :back
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_poll
@@ -139,12 +140,12 @@ class PollsController < ApplicationController
         redirect_to polls_path
       end
     end
-    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def responses_params
       params.require(:responses)
     end
-    
+
     def poll_params
       params.require(:poll).permit(:title, :info, :has_multiple_answer, :user_id , answers_attributes: [:id, :answer, :_destroy])
     end

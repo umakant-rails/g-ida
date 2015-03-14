@@ -6,9 +6,11 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :polls
   has_many :invitations
+  has_many :responses, class_name: "Response",
+    foreign_key: "userid"
 
-  default_scope where(:mark_as_deleted => false)
-    
+  #default_scope where(:mark_as_deleted => false)
+
   validates :email, presence: true, on: :create
   validates :role_id, presence: true, on: :create
   validates :first_name, presence: true, on: :create
