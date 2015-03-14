@@ -25,7 +25,13 @@ class InvitationsController < ApplicationController
         emails && emails.each do | email |
           invitation = Invitation.where(:email => email).first
           invitation = Invitation.create!(:email => email, :user_id => current_user.id) if invitation.blank?
-          polls_ids = params[:invite][:polls].split(",").uniq
+          if params[:invite][:invited_for] == "all"
+            all_polls = current_user.polls.map(&:id)
+            invitation_poll_ids = invitation.invitation_polls.map(&:poll_id)
+            polls_ids = all_polls - invitation_poll_ids
+          else
+            polls_ids = params[:invite][:polls].split(",").uniq
+          end
           invitation_poll_arr = []
           polls_ids.each do |poll_id|
             token = SecureRandom.uuid
