@@ -17,15 +17,8 @@
       </ul>
     </div>
     <div class="span2"></div>
-  </div> 
-  <div class="clearboth"></div>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8">
-      <div style="color: red;">* invite for all poll does not work. work is going on this feature.</div>
-      <div class="clearboth"></div>
-    </div>
   </div>
+  <div class="clearboth"></div>
   <div class="row">
     <div class="span2"></div>
     <div class="span8" id="polls_list_block">
@@ -41,7 +34,7 @@
   <div class="clearboth"></div>
   <div class="row" id="poll_select_box_row">
     <div class="span2"></div>
-    <input type="hidden" id="invite_polls_list" name="invite[polls]"> 
+    <input type="hidden" id="invite_polls_list" name="invite[polls]">
     <div class="span8 poll_select_bx_div">
       <%= select_tag "polls_list", options_from_collection_for_select(@polls, "id", "title"), class: "span8", prompt: "Select Poll", disabled: true %>
     </div>
@@ -50,10 +43,10 @@
   <div class="row">
     <div class="span2"></div>
     <div class="span8">
-      <input  type="submit" id="invite_peoples_for_poll" disabled="true" class="custom-btn floatR mrgn-lft" 
+      <input  type="submit" id="invite_peoples_for_poll" disabled="true" class="custom-btn floatR mrgn-lft"
         value = "Invite People" />
-      <a href="<%= new_invitation_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a> 
-      
+      <a href="<%= new_invitation_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a>
+
     </div>
     <div class="span2"></div>
   </div>
