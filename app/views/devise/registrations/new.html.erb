@@ -9,7 +9,7 @@
           <% resource.errors.messages.each do |key, values| %>
             <%
               msg = '';
-              values.each{ |val| msg = msg + key.to_s + ' '+ val + '</br>' } 
+              values.each{ |val| msg = msg + key.to_s + ' '+ val + '</br>' }
             %>
             <li><%= msg.html_safe   %></li>
           <% end %>
@@ -36,15 +36,9 @@
             </div>
           </div>
           <div class="row-fluid">
-            <div class="span3"><%= f.label :first_name %></div>
+            <div class="span3"><%= f.label :username %></div>
             <div class="span9">
-              <%= f.text_field :first_name %>
-            </div>
-          </div>
-          <div class="row-fluid">
-            <div class="span3"><%= f.label :last_name %></div>
-            <div class="span9">
-              <%= f.text_field :last_name %>
+              <%= f.text_field :username %>
             </div>
           </div>
           <div class="row-fluid">

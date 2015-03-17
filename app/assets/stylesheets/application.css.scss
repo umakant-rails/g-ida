@@ -1,0 +1,46 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "invitations";
+
+a:hover{
+  background-color: none !important;
+}
+
+body{
+  background-color: #FAFAFA !important;
+}
+.container{
+  background-color: #FFFFFF;
+}
+
+a.btn{
+  color: #FFFFFF !important;
+}
+
+.textR{
+  text-align: right !important;
+}
+
+.textL{
+  text-align: left !important;
+}
+
+.floatL{
+  float: left !important;
+}
+
+.floatR{
+  float: right !important;
+}
+.clearboth{
+  clear: both;
+  margin-top: 6px;
+}
+.table td{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.action{
+  width: 22% !important;
+}
