@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Evoting" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :cache => true %>
   </head>
   <body>
@@ -23,6 +24,5 @@
     <footer class="footer">
       <center><p>Hayden Dolphins Swim Team &copy; 2013</p></center>
     </footer>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>
