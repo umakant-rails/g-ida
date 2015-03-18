@@ -1,34 +1,41 @@
-<h3>Listing clients</h3>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Last sign in at</th>
-      <th class="action">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @clients.present? %>
-      <% @clients.each do |client| %>
-        <tr>
-          <td><%= client.email %></td>
-          <td><%= client.first_name.blank?  ? '-' : client.first_name %></td>
-          <td><%= client.last_name.blank?  ? '-' : client.last_name %></td>
-          <td><%= client.last_sign_in_at.strftime("%B %d, %Y") %></td>
-          <td>
-            <%= link_to 'Show', client_path(client), class: "btn btn-primary" %>
-            <%= link_to 'Destroy', client_mark_as_deleted_path(client), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          </td>
-        </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan="5"><center>There is no clients available.</center></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%#= paginate @clients %>
-<br>
+<div class="page-head">
+  <h2>Listing clients</h2>
+</div>
+<div class="cl-mcont">
+  <div class="block-flat">
+    <div class="content">
+      <table >
+        <thead>
+          <tr>
+            <th><strong>Email</strong></th>
+            <th><strong>First name</strong></th>
+            <th><strong>Last name</strong></th>
+            <th><strong>Last sign in at</strong></th>
+            <th class="action"><strong>Action</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @clients.present? %>
+            <% @clients.each do |client| %>
+              <tr>
+                <td><%= client.email %></td>
+                <td><%= client.first_name.blank?  ? '-' : client.first_name %></td>
+                <td><%= client.last_name.blank?  ? '-' : client.last_name %></td>
+                <td><%= client.last_sign_in_at.strftime("%B %d, %Y") %></td>
+                <td>
+                  <%= link_to 'Show', client_path(client), class: "btn btn-primary" %>
+                  <%= link_to 'Destroy', client_mark_as_deleted_path(client), method: :delete,
+                    data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                </td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td colspan="5"><center>There is no clients available.</center></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -9,10 +9,10 @@
 Role.create(:name => "Admin") if Role.where(:name => "Admin").blank?
 Role.create(:name => "Client") if Role.where(:name => "Client").blank?
 admin_role_id = Role.where(:name => "Admin").first.id rescue nil
-demoUser = User.create(:first_name => "evoting", :last_name => "admin", :email => "evoting@gmail.com", :password => "evote123", :role_id => admin_role_id )
+demoUser = User.create(:first_name => "evoting", :last_name => "admin", username: "evoting", :email => "evoting@gmail.com", :password => "evote123", :role_id => admin_role_id )
 
 if Poll.where(:title => "Volunteer Opportunities").blank?
-  poll = Poll.create(:title => "Volunteer Opportunities", :info => "Please sign up for any of the jobs below.") 
+  poll = Poll.create(:title => "Volunteer Opportunities", :info => "Please sign up for any of the jobs below.")
   if poll.present?
     Answer.create(:poll => poll, :answer => "A. T-Shirts sales") if Answer.where(:poll => poll, :answer => "A. T-Shirts sales").blank?
     Answer.create(:poll => poll, :answer => "B. Runner") if Answer.where(:poll => poll, :answer => "B. Runner").blank?
