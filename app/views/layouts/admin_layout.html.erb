@@ -6,22 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Evoting" %></title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :cache => true %>
   </head>
   <body>
     <%= render partial: "layouts/admin_navbar" %>
-    <div class="clear:both;"></div>
-    <div class="container home-container">
-      <div class="row">
-        <div class="span12">
-          <%= yield %>
+    <div id="cl-wrapper">
+      <div class="cl-sidebar">
+        <div class="cl-toggle"><i class="fa fa-bars"></i></div>
+        <div class="cl-navblock">
+          <div class="menu-space">
+            <div class="content">
+              <div class="side-user">
+                <div class="info">
+                  <p>Disk Usage: 40 <b>GB</b> / 100 <b>GB</b><a href="#"><i class="fa fa-plus"></i></a></p>
+                  <div class="progress progress-user">
+                    <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-info">
+                      <span class="sr-only">50% Complete (success)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="cl-vnavigation">
+                <li><a href="#"><i class="fa fa-file"></i><span>Pages</span></a>
+                  <ul class="sub-menu">
+                    <li><a href="pages-blank.html">Blank Page</a></li>
+                    <li class="active"><a href="index.html">Blank Page Header</a></li>
+                    <li><a href="pages-blank-aside.html">Blank Page Aside</a></li>
+                    <li><a href="pages-login.html">Login</a></li>
+                    <li><a href="pages-404.html">404 Page</a></li>
+                    <li><a href="pages-500.html">500 Page</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-right collapse-button" style="padding:7px 9px;">
+            <input type="text" class="form-control search" placeholder="Search..." />
+            <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+          </div>
         </div>
-      </div><!--/row-->
-    </div> <!-- /container -->
-    <footer class="footer">
-      <center><p>Hayden Dolphins Swim Team &copy; 2013</p></center>
-    </footer>
+      </div>
+      <div class="container-fluid" id="pcont">
+        <div class="page-head">
+          <h2>Blank Page</h2>
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li class="active">Sub Category</li>
+          </ol>
+        </div>
+        <div class="cl-mcont">
+           <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

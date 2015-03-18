@@ -1,16 +1,17 @@
-<% if current_user.present? %>
-  <div class="row">
-    <center>
-      <span style="font-size:16px">Hi <%= get_user_name_by_email(current_user.email) rescue ''%>, Your most welcome in Survey world.</span>
-    </center>
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <% if current_user.present? %>
+      <center>
+        <span style="font-size:16px">Hi <%= get_user_name_by_email(current_user.email) rescue ''%>, Your most welcome in Survey world.</span>
+      </center>
+    <% else %>
+      <center>
+        <%= image_tag('survey1.png', :size => '400x150', :style => "margin-top: -10px;", :alt => 'logo')%>
+      </center>
+      <div class="clearboth"></div>
+      <strong>Evoting</strong> is an plateform, where A admin can survey. A admin can create question with answer and option type. Option are two type. If admin check to has mulitple answer then user can select multiple answer for reponse providing. If admin do not check has multiple answer checkbox on poll creation time then user can select only single answer for repsonse providing.
+    <% end %>
   </div>
-<% else %>
-  <div class="row">
-    <center>
-      <%= image_tag('survey1.png', :size => '400x150', :style => "margin-top: -10px;", :alt => 'logo')%>
-    </center>
-  </div>
-  <div class="row" style="padding:5px 20px;">
-    <strong>Evoting</strong> is an plateform, where A admin can survey. A admin can create question with answer and option type. Option are two type. If admin check to has mulitple answer then user can select multiple answer for reponse providing. If admin do not check has multiple answer checkbox on poll creation time then user can select only single answer for repsonse providing.
-  </div>
-<% end %>
+  <div class="col-lg-1"></div>
+</div>
