@@ -1,40 +1,41 @@
-<h3>Listing polls</h3>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Created At</th>
-      <th>Update At</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @polls.present? %>
-      <% @polls.each do |poll| %>
-        <tr>
-          <td><%= poll.title %></td>
-          <td><%= poll.created_at %></td>
-          <td><%= poll.updated_at %></td>
-          <td>
-            <%= link_to 'Vote', vote_poll_path(poll), class: "btn btn-primary" %>
-            <%= link_to 'Show', poll, class: "btn btn-primary" %>
-            <% if current_user && current_user.email = "demo@example.com"%>
-              <%= link_to 'Edit', edit_poll_path(poll), class: "btn btn-primary" %>
-              <%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<div class="page-head">
+  <h2>Listing polls</h2>
+</div>
+<div class="cl-mcont">
+  <div class="block-flat">
+    <div class="content">
+      <table >
+        <thead>
+          <tr>
+            <th style="width:50%;"><strong>Title</strong></th>
+            <th class="action"><strong>Action</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @polls.present? %>
+            <% @polls.each do |poll| %>
+              <tr>
+                <td><%= poll.title %></td>
+                <td>
+                  <%= link_to 'Vote', vote_poll_path(poll), class: "btn btn-primary" %>
+                  <%= link_to 'Show', poll, class: "btn btn-primary" %>
+                  <% if current_user && current_user.email = "demo@example.com"%>
+                    <%= link_to 'Edit', edit_poll_path(poll), class: "btn btn-primary" %>
+                    <%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                  <% end %>
+                </td>
+              </tr>
             <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan="4"><center>There is no poll available.</center></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+          <% else %>
+            <tr>
+              <td colspan="4"><center>There is no poll available.</center></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <% if current_user && ["Admin"].include?(current_user.role.name) %>
   <%= link_to 'New Poll', new_poll_path %>
 <% end %>
