@@ -1,0 +1,47 @@
+<div class="cl-sidebar">
+  <div class="cl-toggle"><i class="fa fa-bars"></i></div>
+  <div class="cl-navblock">
+    <div class="menu-space">
+      <div class="content">
+        <div class="side-user">
+          <div class="info">
+            <p>Disk Usage: 40 <b>GB</b> / 100 <b>GB</b><a href="#"><i class="fa fa-plus"></i></a></p>
+            <div class="progress progress-user">
+              <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-info">
+                <span class="sr-only">50% Complete (success)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="cl-vnavigation">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="<%= clients_path %>">Clients</a></li>
+          <li><%= link_to('Responses', responses_path) %></li>
+          <li><%= link_to('Answers', answers_path) %></li>
+          <li class="parent">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Poll</a>
+            <ul class="sub-menu">
+              <li><%= link_to "Create Optional Poll", new_poll_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Create Rating Poll", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Create Descriptive Poll", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Poll List", polls_path %></li>
+            </ul>
+          </li>
+          <li id="fat-menu" class="parent">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Invitation </a>
+            <ul class="sub-menu">
+              <li><%= link_to "Invited peoples list", invitations_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Invite to new peoples", new_invitation_path%></li>
+              <li class="divider"></li>
+              <li><%= link_to "Invite to Invited peoples", invite_to_invited_peoples_invitations_path%></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

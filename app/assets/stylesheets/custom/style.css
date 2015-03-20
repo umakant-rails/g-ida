@@ -361,7 +361,7 @@ pre {
   color: #60C060;
 }
 .navbar-default .navbar-nav > li.button .dropdown-menu li > a > i.info {
-  color: #4D90FD;
+  color: #319DDB;
 }
 .navbar-default .navbar-nav > li.button .dropdown-menu li > a > i.warning {
   color: #FC9700;
@@ -974,7 +974,7 @@ body.modal-open,
 }
 .cl-vnavigation .parent ul li.active a {
   background-color: #1e2025;
-  border-left: 1px solid #2494F2;
+  border-left: 1px solid #377CA8;
 }
 .cl-vnavigation .parent ul li a:hover {
   background-color: #1e2025;
@@ -984,10 +984,10 @@ body.modal-open,
 }
 .cl-vnavigation .active > a {
   background: #2A2C34;
-  border-left: 1px solid #2494F2;
+  border-left: 1px solid #377CA8;
 }
 .cl-vnavigation .selected:hover a {
-  background-color: #2494F2;
+  background-color: #377CA8;
 }
 .cl-vnavigation .selected:hover ul a {
   background-color: #1A1C20;
@@ -1232,7 +1232,7 @@ input::-webkit-input-speech-button {
 }
 .login-container .block-flat .header {
   padding: 9px 20px;
-  background: #2494F2;
+  background: #377CA8;
   border-bottom: 1px solid #2082D5;
 }
 .login-container .block-flat .header h3 {
@@ -1306,8 +1306,8 @@ input::-webkit-input-speech-button {
 .sign-up-container .block-flat .header,
 .forgotpassword-container .block-flat .header {
   padding: 9px 20px;
-  background: #2494f2;
-  border-bottom: 1px solid #2494f2;
+  background: #377CA8;
+  border-bottom: 1px solid #377CA8;
 }
 .sign-up-container .block-flat .header h3,
 .forgotpassword-container .block-flat .header h3 {
@@ -1900,7 +1900,7 @@ table.information > tbody > tr > td {
   background: #f2f2f2;
 }
 .friend-widget:hover img {
-  border-color: #4D90FD;
+  border-color: #319DDB;
 }
 .friend-widget h4 {
   font-size: 15px;
@@ -1943,7 +1943,7 @@ table.information > tbody > tr > td {
   outline: 0;
 }
 .avatar-upload .overlay {
-  background: #4D90FD;
+  background: #319DDB;
   height: 3px;
   display: none;
   position: absolute;
@@ -2091,9 +2091,9 @@ table tbody td {
 }
 table .primary-emphasis,
 table .primary-emphasis-dark {
-  background: #4D90FD;
+  background: #319DDB;
   color: #FFF;
-  border-color: #4D90FD;
+  border-color: #319DDB;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 table .primary-emphasis-dark {
@@ -3164,7 +3164,7 @@ div.dataTables_length label select {
 }
 .fuelux .wizard ul li.complete {
   color: #fff;
-  background: #4D90FD;
+  background: #319DDB;
 }
 .fuelux .wizard ul li.complete:hover {
   background: #5c9aff;
@@ -3176,7 +3176,7 @@ div.dataTables_length label select {
   border-left-color: #1e7dcc;
 }
 .fuelux .wizard ul li.complete .chevron:before {
-  border-left: 14px solid #4D90FD;
+  border-left: 14px solid #319DDB;
 }
 .fuelux .wizard ul li.active .chevron:before {
   border-left: 14px solid #FFF;
@@ -3425,7 +3425,7 @@ h1:first-child {
 }
 /*Primary color accordion*/
 .accordion.accordion-color .panel-heading a {
-  background-color: #4D90FD;
+  background-color: #319DDB;
   color: #FFF;
 }
 .accordion.accordion-color .panel-heading a.collapsed {
@@ -3433,12 +3433,12 @@ h1:first-child {
   color: #555;
 }
 .accordion.accordion-color .panel-collapse .panel-body {
-  background-color: #4D90FD;
+  background-color: #319DDB;
   color: #FFF;
 }
 /*Semi color accordion*/
 .accordion.accordion-semi .panel-heading a {
-  background-color: #4D90FD;
+  background-color: #319DDB;
   color: #FFF;
   transition: background-color 200ms ease-in-out;
   border-bottom: 1px solid #2188de;
@@ -3510,7 +3510,7 @@ h1:first-child {
 }
 .dd-handle:hover {
   color: #FFF;
-  background: #4D90FD;
+  background: #319DDB;
   border-color: #428BCA;
 }
 .dd-item > button {
@@ -3606,7 +3606,7 @@ h1:first-child {
   white-space: nowrap;
   overflow: hidden;
   border: 1px solid #3680BF;
-  background: #4D90FD;
+  background: #319DDB;
   height: 36px;
   box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
@@ -3637,7 +3637,7 @@ h1:first-child {
   box-shadow: none;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
   background: #E3E3E3;
@@ -3648,7 +3648,7 @@ h1:first-child {
   -webkit-transform: none;
 }
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-container {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-container {
   background: #E3E3E3;
@@ -3663,7 +3663,7 @@ h1:first-child {
   right: 0;
   background: #fff;
   border-radius: 50%;
-  border: 3px solid #4D90FD;
+  border: 3px solid #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-large {
   min-width: 100px;
@@ -3688,7 +3688,7 @@ h1:first-child {
   width: 18px;
 }
 .bootstrap-switch.bootstrap-switch-on .bootstrap-switch-label {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-label {
   background: #e3e3e3;
@@ -3780,16 +3780,16 @@ h1:first-child {
 }
 /*Off Colors*/
 .bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-off .bootstrap-switch-handle-off {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-off .bootstrap-switch-label {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-off .bootstrap-switch-label:after {
-  border-color: #4D90FD;
+  border-color: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-on .bootstrap-switch-container {
-  background: #4D90FD;
+  background: #319DDB;
 }
 .bootstrap-switch.bootstrap-switch-offclr-info.bootstrap-switch-off .bootstrap-switch-handle-off {
   background: #5bc0de;
@@ -3909,7 +3909,7 @@ h1:first-child {
   margin-right: 13px;
 }
 .slider-selection {
-  background: #4D90FD;
+  background: #319DDB;
   border: 1px solid #437DDC;
   box-shadow: none;
 }
@@ -4171,7 +4171,7 @@ h1:first-child {
 .alert-white.alert-info .icon,
 .alert-white.alert-info .icon:after {
   border-color: #3A8ACE;
-  background: #4D90FD;
+  background: #319DDB;
 }
 .alert-white.alert-warning .icon,
 .alert-white.alert-warning .icon:after {
@@ -4203,7 +4203,7 @@ h1:first-child {
   background-color: #60C060;
 }
 .label-primary {
-  background-color: #4D90FD;
+  background-color: #319DDB;
 }
 .label-warning {
   background-color: #fcad37;
@@ -4222,7 +4222,7 @@ h1:first-child {
   background-color: #a1a1a1;
 }
 .badge-primary {
-  background-color: #4D90FD !important;
+  background-color: #319DDB !important;
 }
 .badge-success {
   background-color: #60C060 !important;
@@ -4247,7 +4247,7 @@ h1:first-child {
   line-height: 17px;
 }
 .progress-bar-info {
-  background-color: #4D90FD;
+  background-color: #319DDB;
 }
 .progress-bar-success {
   background-color: #60C060;
@@ -4274,7 +4274,7 @@ h1:first-child {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  background-color: #4D90FD;
+  background-color: #319DDB;
 }
 /*List Group*/
 .list-group-item:first-child {
@@ -4288,7 +4288,7 @@ h1:first-child {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background-color: #4D90FD;
+  background-color: #319DDB;
 }
 .list-group-item i {
   min-width: 15px;
@@ -4309,12 +4309,12 @@ h1:first-child {
   line-height: 22px;
 }
 a.list-group-item:hover {
-  border-left: 5px solid #4D90FD;
-  border-color: #4D90FD;
+  border-left: 5px solid #319DDB;
+  border-color: #319DDB;
   padding-left: 11px;
 }
 a.list-group-item:hover + a.list-group-item {
-  border-top-color: #4D90FD;
+  border-top-color: #319DDB;
 }
 .list-group .active:hover {
   padding-left: 15px;
@@ -4408,7 +4408,7 @@ a.list-group-item:hover + a.list-group-item {
 }
 .btn-primary,
 .btn-primary:focus {
-  background-color: #4D90FD;
+  background-color: #319DDB;
   border-color: #3680BF;
 }
 .btn-primary:hover,
@@ -4752,7 +4752,7 @@ button::-moz-focus-inner {
 .colored-header .modal-header {
   padding: 20px;
   border-bottom: 1px solid #1080de !important;
-  background-color: #2494f2;
+  background-color: #377CA8;
   color: #fff;
 }
 .colored-header.success .modal-header {
@@ -4780,11 +4780,11 @@ button::-moz-focus-inner {
   color: #fff;
 }
 .md-dark .modal-header {
-  background-color: #2494f2;
+  background-color: #377CA8;
   color: #fff;
 }
 .md-dark .modal-header {
-  background-color: #2494f2;
+  background-color: #377CA8;
   color: #fff;
 }
 .md-dark .md-content {
@@ -4855,7 +4855,7 @@ button::-moz-focus-inner {
   color: #60C060;
 }
 .i-circle.primary i {
-  color: #4D90FD;
+  color: #319DDB;
 }
 .i-circle.info i {
   color: #5bc0de;
@@ -5074,7 +5074,7 @@ button::-moz-focus-inner {
 }
 /*Colors */
 .gritter-item-wrapper.primary {
-  background: #2494f2;
+  background: #377CA8;
 }
 .gritter-item-wrapper.success {
   background: #60c060;
@@ -5145,7 +5145,7 @@ button::-moz-focus-inner {
   font-size: 14px;
   text-align: center;
   width: 24px;
-  color: #4D90FD;
+  color: #319DDB;
 }
 .treeview ul li label {
   padding-left: 36px;
@@ -5424,8 +5424,8 @@ ul.timeline li > .date {
   text-shadow: none;
 }
 .fc-event {
-  background: #2494f2;
-  border-color: #2494f2;
+  background: #377CA8;
+  border-color: #377CA8;
 }
 .external-event {
   /* try to mimick the look of a real event */
@@ -5433,7 +5433,7 @@ ul.timeline li > .date {
   padding: 2px 4px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  background: #2494f2;
+  background: #377CA8;
   color: #fff;
   font-size: .85em;
   cursor: pointer;
@@ -5462,10 +5462,10 @@ ul.timeline li > .date {
   padding-left: 20px;
 }
 .multiselect-container > li.active > a {
-  background-color: #2494f2;
+  background-color: #377CA8;
 }
 .multiselect-container > li.active:hover > a {
-  background-color: #2494f2;
+  background-color: #377CA8;
 }
 .multiselect-container > li > label.multiselect-group {
   font-size: 13px;
@@ -5475,15 +5475,15 @@ ul.timeline li > .date {
   box-shadow: none;
 }
 .ms-container .ms-list.ms-focus {
-  border-color: #2494f2;
+  border-color: #377CA8;
   box-shadow: none;
 }
 .ms-container .ms-selectable li.ms-hover,
 .ms-container .ms-selection li.ms-hover {
-  background: #2494f2;
+  background: #377CA8;
 }
 #ms-custom-headers .custom-header {
-  background: #2494f2;
+  background: #377CA8;
   color: #FFFFFF;
   padding: 7px 10px;
   font-size: 14px;

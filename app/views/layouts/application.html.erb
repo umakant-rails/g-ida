@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
   </head>
-  <body>
+  <body style="opacity: 1; margin-left: 0px;">
     <%= render partial: "layouts/navbar" %>
     <div id="cl-wrapper">
       <div class="container-fluid" id="pcont">
@@ -17,5 +17,10 @@
         </div>
       </div>
     </div>
+    <script>
+      $(document).ready(function(){
+        App.init();
+      });
+    </script>
   </body>
 </html>

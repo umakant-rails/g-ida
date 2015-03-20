@@ -12,10 +12,64 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact_us">Contact us</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right user-nav">
-        <li><%= link_to "Sign in", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path%></li>
-      </ul>     
+      <% if current_user.present? %>
+        <ul class="nav navbar-nav navbar-right user-nav">
+          <li class="dropdown profile_menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username.capitalize %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">My Account</a></li>
+              <li><%= link_to "Profile", profile_path(current_user) %></li>
+              <li><a href="#">Messages</a></li>
+              <li><%= link_to "Settings" %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right not-nav">
+          <li class="button dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class=" fa fa-comments"></i></a>
+            <ul class="dropdown-menu messages">
+              <li>
+                <div class="nano nscroller">
+                  <div class="content">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/avatar2.jpg" alt="avatar" /><span class="date pull-right">13 Sept.</span> <span class="name">Daniel</span> I'm following you, and I want your money!
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/avatar_50.jpg" alt="avatar" /><span class="date pull-right">20 Oct.</span><span class="name">Adam</span> is now following you
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/avatar4_50.jpg" alt="avatar" /><span class="date pull-right">2 Nov.</span><span class="name">Michael</span> is now following you
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="assets/avatar3_50.jpg" alt="avatar" /><span class="date pull-right">2 Nov.</span><span class="name">Lucy</span> is now following you
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <ul class="foot"><li><a href="#">View all messages </a></li></ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right not-nav">
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path%></li>
+        </ul>
+      <% end %>
     </div><!--/.nav-collapse -->
   </div>
 </div>
