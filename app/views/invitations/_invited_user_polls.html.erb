@@ -1,9 +1,13 @@
-<div class="timeline-panel">
-  <% polls && polls.each do | poll | %>
-    <div class="poll_ques_list">
-      <div id="poll_<%= poll.id %>" class="poll_txt_div"><%= poll.title %></div>
-      <div class="poll_remove_icon" data-poll_id="<%= poll.id %>"></div>
-      <!--<div class="icon-remove poll_remove_icon" data-poll_id="<%#= poll.id %>"></div>  -->
-      </div>
+<div class="content overflow-hidden" style="font-size:14px;">
+  <% if polls.present? %>
+    <ol>
+      <% polls && polls.each do | poll | %>
+        <li><%= poll.title %></li>
+      <% end %>
+    <ol>
+  <% else %>
+    <ul>
+      <li style="list-style-type:none;">There is no question of invitation Polls.</li>
+    </ul>
   <% end %>
 </div>

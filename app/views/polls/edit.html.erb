@@ -1,11 +1,14 @@
-<h3>Editing poll</h3>
-<div class="border"></div>
-<%= render 'form' %>
-<div class="border"></div>
-<div class="row">
-  <div class="span2"></div>
-  <div class="span8">
-    <%= link_to 'Show', @poll, class: "btn btn-primary" %> 
-    <%= link_to 'Back', polls_path, class: "btn btn-primary" %>
+<div class="page-head">
+  <h2>Editing Poll </h2>
+</div>
+<div class="cl-mcont">
+  <div class="row">
+    <div class="col-lg-12 pull-left">
+      <div class="block-flat">
+        <%= render partial: 'form' %>
+      </div>
+      <%= link_to 'Show', @poll, class: "btn btn-primary" %>
+      <%= link_to 'Back', polls_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>

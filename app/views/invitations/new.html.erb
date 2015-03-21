@@ -1,55 +1,58 @@
-<h3>Invite top peoples</h3>
-<div class="border"></div>
-<br/>
-<%= form_tag('/invitations', method: :post) do -%>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8">
-      <span class="invite_hd_txt">Invite by Email</span>
-      <br/>
-      <br/>
-      <div id="error_msg"></div>
-      <ul class="tagit_invite_user_ul">
-        <li>
-          <input type="hidden" id="invite_emails" name="invite[emails]">
-          <input id="tagit_txt_input">
-        </li>
-      </ul>
+<div class="page-head">
+  <h2>Invite peoples</h2>
+</div>
+<div class="cl-mcont">
+  <div class="block-flat">
+    <div class="header">
+      <h3>Invite by Email</h3>
     </div>
-    <div class="span2"></div>
-  </div>
-  <div class="clearboth"></div>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8" id="polls_list_block">
-      <div class="poll_list_header">
-        <%=radio_button_tag 'invite[invited_for]', 'all', false, class: "invited_for_chk_bx"%> Invite for all poll
-        <%=radio_button_tag 'invite[invited_for]', 'custom', false, class: "invited_for_chk_bx"%> Invite for selected poll
+    <%= form_tag('/invitations', method: :post) do -%>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div id="error_msg"></div>
+          <ul class="tagit_invite_user_ul">
+            <li>
+              <input type="hidden" id="invite_emails" name="invite[emails]">
+              <input id="tagit_txt_input">
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2"></div>
       </div>
-      <div id="polls_list_div" style="display:none;">
+      <div class="clear"></div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="poll_list_header">
+            <%=radio_button_tag 'invite[invited_for]', 'all', false, class: "invited_for_chk_bx"%> Invite for all poll
+            <%=radio_button_tag 'invite[invited_for]', 'custom', false, class: "invited_for_chk_bx"%> Invite for selected poll
+          </div>
+          <div id="polls_list_div" style="display:none;">
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
       </div>
-    </div>
-    <div class="span2"></div>
+      <div class="clear"></div>
+      <div class="row" id="poll_select_box_row">
+        <div class="col-sm-2"></div>
+        <input type="hidden" id="invite_polls_list" name="invite[polls]">
+        <div class="col-sm-8 poll_select_bx_div">
+          <%= select_tag "polls_list", options_from_collection_for_select(@polls, "id", "title"), class: "col-sm-8", prompt: "Select Poll", disabled: true, class: "form-control" %>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <input  type="submit" id="invite_peoples_for_poll" disabled="true" class="custom-btn floatR mrgn-lft"
+            value = "Invite People" />
+          <a href="<%= new_invitation_path %>"  class=" btn-btn-primary custom-btn floatR lnk_btn" data-dismiss="modal"
+            value="Reset" > Reset </a>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="clear"></div>
+    <% end -%>
   </div>
-  <div class="clearboth"></div>
-  <div class="row" id="poll_select_box_row">
-    <div class="span2"></div>
-    <input type="hidden" id="invite_polls_list" name="invite[polls]">
-    <div class="span8 poll_select_bx_div">
-      <%= select_tag "polls_list", options_from_collection_for_select(@polls, "id", "title"), class: "span8", prompt: "Select Poll", disabled: true %>
-    </div>
-    <div class="span2"></div>
-  </div>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8">
-      <input  type="submit" id="invite_peoples_for_poll" disabled="true" class="custom-btn floatR mrgn-lft"
-        value = "Invite People" />
-      <a href="<%= new_invitation_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a>
-
-    </div>
-    <div class="span2"></div>
-  </div>
-<% end -%>
-<br/>
-<div class="border"></div>
+</div>

@@ -18,16 +18,16 @@
 
 #polls_list_block{
   border: 1px solid lightgray;
-  padding: 2px;
 }
-.poll_ques_list{
-  border: 1px solid #D3D3D3;
+
+.poll_ques_list {
+  background-color: #f6f6f6;
+  border: 1px solid #d3d3d3;
+  height: 32px;
   margin: 5px;
   padding: 5px;
-  background-color: #F6F6F6;
-  height: 20px;
 }
-                            
+
 .poll_list_rm_icon, .poll_remove_icon{
   color: #409DE9;
   margin-top: 3px;
@@ -41,7 +41,7 @@
 
 .poll_list_header{
   background-color: #F6F6F6;
-  border-bottom: 1px solid #D3D3D3;
+  border: 1px solid #D3D3D3;
   margin: -1px -2px -3px;
   padding: 6px;
 }
@@ -52,7 +52,7 @@
 
 .lnk_btn{
   color: #FFFFFF !important;
-  height: 19px;
+  height: 35px;
   text-align: center;
   text-decoration: none;
   width: 87px !important;

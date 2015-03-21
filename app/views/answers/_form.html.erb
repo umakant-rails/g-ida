@@ -1,25 +1,25 @@
 <%= form_for (@answer) do |f| %>
-  <div class="row">
-    <div class="span2 textR">
-      <%= f.label :poll_id %><br>
-    </div>
-    <div class="span8">
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-9">
       <% answers_polls = Hash[@polls.map{|poll| [poll.title, poll.id]}] %>
-      <%= f.select :poll_id, options_for_select(answers_polls, params[:id]), :prompt => "Select poll", :autofocus => true %>
+      <%= f.select :poll_id, options_for_select(answers_polls, params[:id]), {:prompt => "Select poll"},
+        {:autofocus => true, disable:true, class: "form-control"} %>
     </div>
   </div>
-   <div class="row">
-    <div class="span2 textR">
-      <%= f.label :answer %><br>
-    </div>
-    <div class="span8">
-      <%= f.text_field :answer %>
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label">Answer</label>
+    <div class="col-sm-9">
+      <%= f.text_field :answer, class: "form-control"   %>
     </div>
   </div>
-  <div class="row">
-    <div class="span2 textR"></div>
-    <div class="span8">
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
       <%= f.submit class: "btn btn-primary" %>
     </div>
   </div>
+  <div class="clear"></div>
 <% end %>

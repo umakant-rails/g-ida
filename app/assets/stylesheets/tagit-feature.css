@@ -4,12 +4,12 @@
   list-style: none outside none;
   overflow: auto;
   padding: 1px 5px;
-  height: 65px;
+  height: 80px;
   margin-left: 0px;
 }
 ul, ol {
   margin-bottom: 10px;
-  margin-top: 0;  
+  margin-top: 0;
 }
 #tagit_txt_input, #tagit_txt_input:focus {
   border: medium none;

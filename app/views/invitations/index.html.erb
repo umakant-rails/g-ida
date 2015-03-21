@@ -1,42 +1,56 @@
-<h3>Listing Invitation</h3>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th colspan="3">
-        <center>INVITATION DETAILS</center>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @invitations.present? %>
-      <tr>
-        <td style="width: 33%;">
-          <div class="invitation_emails_div"><strong>Invited peoples email</strong></div>
+<div class="page-head">
+  <h2>Listing Invitations</h2>
+</div>
+<div class="cl-mcont">
+  <div class="block-flat">
+    <div class="page-aside email">
+      <div class="header" style="padding: 3px;border-bottom:2px solid #e2e2e2;">
+        <button type="button" data-toggle="collapse" data-target=".mail-nav" class="navbar-toggle">
+          <span class="fa fa-chevron-down"></span>
+        </button>
+        <h4 class="" style="font-size: 20px !important;">Invited peoples email</h4>
+      </div>
+      <br/>
+      <div class="tab-container tab-left">
+        <ul class="nav nav-tabs flat-tabs" style="width:100%;">
           <% @invitations[0..10].each_with_index do |invitation, index| %>
-            <div class="invitation_emails_div <%= "selected" if index == 0 %>"
-              data-index="<%= index %>" data-invitation_id="<%= invitation.id %>">
-              <%= invitation.email %>                                            
+            <li class="<%= "active" if index == 0 %>" >
+              <a data-toggle="tab" href="#tab3-<%= invitation.id %>" aria-expanded="true">
+                <%= invitation.email %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="pane">
+        <div clss="slider" style="height: 352px; top: 0px;"></div>
+      </div>
+		</div>
+    <div id="pcont" class="container-fluid" style="width:100%;">
+      <div class="message">
+        <div class="header" style="padding-left: 10px;">
+          <button class="navbar-toggle" data-target=".mail-nav" data-toggle="collapse" type="button">
+            <span class="fa fa-chevron-down"></span>
+          </button>
+          <h4 class="" style="font-size: 20px !important;">Polls for which people invite</h4>
+        </div>
+        <div class="mail tab-content custom-tab-content" style="border-radius: 0 3px 3px;">
+          <% @invitations[0..10].each_with_index do |invitation, index| %>
+            <div id="tab3-<%= invitation.id %>" class="tab-pane cont <%= "active" if index == 0 %>">
+              <% invitation_polls =  invitation.polls rescue []%>
+              <%= render :partial => 'invitations/invited_user_polls', :locals => { :polls => invitation_polls }%>
             </div>
           <% end %>
-        </td>
-        <td style="width: 67%;">
-          <div class="invitation_emails_div" style="margin-bottom: 7px;">
-            <strong>Polls for which people invite</strong> 
-          </div>
-          <div class="floatL" style="margin-right: -8px;">
-            <image src="/assets/callOut-arrow.png" class="floatL" id="indicator_img" width="30px" height="35px" style="margin-left: -7px;"/>
-          </div>
-          <div id="invitation_poll_list" style="height: <%= (@invitations.length * 35 ) %>px;overflow: auto; max-height:345px;">
-            <% invitation_polls =  @invitations[0].polls rescue []%>
-            <%= render :partial => 'invitations/invited_user_polls', :locals => { :polls => invitation_polls }%>
-          </div>
-        </td>
-      </tr>
-    <% else %>
-      <tr>
-        <td colspan="2"><center>There is no invitation available.</center></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Invite to peoples', new_invitation_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .custom-tab-content {
+    border-bottom: 0px solid #e2e2e2 !important;
+    border-left: 0px solid #ececec !important;
+    border-right: 0px solid #ececec !important;
+    box-shadow: 0 0px 0 0 rgba(0, 0, 0, 0.04) !important;
+  }
+</style>

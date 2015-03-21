@@ -1,39 +1,40 @@
 <%= nested_form_for @poll do |f| %>
-  <div class="row">
-    <div class="span2 textR">
-      Title
-    </div>
-    <div class="span8">
-      <%= f.text_field :title, class: "span8" %>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-9">
+      <%= f.text_field :title, class: "form-control" %>
     </div>
   </div>
-  <div class="row">
-    <div class="span2 textR"></div>
-    <div class="span8">
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
       <%= f.check_box :has_multiple_answer, :style => "margin-top: -2px;" %>
       &nbsp;&nbsp;&nbsp;<span>Has multiple answer</span>
     </div>
   </div>
-  <br/>
-  <div class="row" id="answers">
-    <div class="span2 textR"> Answers </div>
-    <div class="span8">
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label">Answers</label>
+    <div class="col-sm-9">
       <%= f.fields_for :answers do |builder| %>
         <%= render "polls/answer", :f => builder %>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="span2 textR"></div>
-    <div class="span8">
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
       <%= f.link_to_add "+ Add more answer", :answers %>
     </div>
   </div>
-  <br/>
-  <div class="row">
-    <div class="span2 textR"></div>
-    <div class="span8">
+  <div class="clear"></div>
+  <div class="form-group">
+    <label for="nick" class="col-sm-2 control-label"></label>
+    <div class="col-sm-9">
       <%= f.submit class: "btn btn-primary" %>
     </div>
   </div>
+  <div class="clear"></div>
 <% end %>

@@ -4,6 +4,7 @@
 @import "custom/font-awesome";
 @import "custom/style";
 @import "invitations";
+@import "tagit-feature";
 
 a:hover{
   background-color: none !important;
@@ -38,6 +39,23 @@ a.btn{
 .clearboth{
   clear: both;
   margin-top: 6px;
+}
+
+.spacer{
+  clear: both;
+  margin-top: 5px;
+}
+.spacer10{
+  clear: both;
+  margin-top: 10px;
+}
+.spacer15{
+  clear: both;
+  margin-top: 15px;
+}
+.spacer20{
+  clear: both;
+  margin-top: 20px;
 }
 .table td{
   padding-left: 5px !important;

@@ -39,14 +39,14 @@ $(document).ready(function(){
     if(poll_arr.length == 0){
       $("#polls_list_div").hide()
     }
-  }                                                                                         
+  }
 
   $(document).on('change', '#polls_list', function(event){
     var poll = $(this).find('option:selected').text();
     var id = $(this).find('option:selected').val();
     var str = "<div class='poll_ques_list'>" +
       "<div class='poll_txt_div' id='poll_" + id + "'>" +  poll + "</div>" +
-      "<div data-poll_id ='" + id + "' class='icon-remove poll_list_rm_icon'></div>" +
+      "<div data-poll_id ='" + id + "' class='fa fa-times  poll_list_rm_icon'></div>" +
     "</div>";
      add_in_poll_list(event, id);
     $("#polls_list_div").append(str);
@@ -56,7 +56,7 @@ $(document).ready(function(){
     var id = $(this).data('poll_id');
     remove_from_poll_list(event, id);
     $(this).parent().remove();
-  }); 
+  });
 
   $(document).on('click', '.invited_for_chk_bx', function(event){
     var txt = $(this).val();
@@ -64,7 +64,7 @@ $(document).ready(function(){
       $("#polls_list").prop("disabled", true);
       $("#polls_list_div").children().remove();
       $("#polls_list_div").hide();
-      
+
     } else {
       $("#polls_list").prop("disabled", false);
     }
@@ -86,12 +86,12 @@ $(document).ready(function(){
       }
 
     });
-    
+
   });
 
   $(document).on('click', '#invite_for_more_poll', function(event){
     var invitation_id = $(this).data('invitation_id');
-    
+
   });
 
   $(document).on('change', '#invitation_emails', function(event){
@@ -107,7 +107,7 @@ $(document).ready(function(){
       });
     }
   });
-  
+
 });
 
 

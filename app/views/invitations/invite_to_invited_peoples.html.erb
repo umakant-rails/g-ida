@@ -1,45 +1,50 @@
-<h3>Invite to invited peoples</h3>
-<div class="border"></div>
-<br/>
-<%= form_tag('/invitations', method: :post) do -%>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8">
-      <%= select_tag "invite[emails]", options_from_collection_for_select(@invitations, "email", "email"), class: "span8", prompt: "Select email", id: "invitation_emails"%>
-    </div>
-    <div class="span2"></div>
-  </div> 
-  <div class="clearboth"></div>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8" id="polls_list_block">
-      <div class="poll_list_header">
-        Selected polls for invitations
+<div class="page-head">
+  <h2>Invite to invited peoples</h2>
+</div>
+<div class="cl-mcont">
+  <div class="block-flat">
+    <%= form_tag('/invitations', method: :post) do -%>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <%= select_tag "invite[emails]", options_from_collection_for_select(@invitations, "email", "email"),
+            class: "form-control", prompt: "Select email", id: "invitation_emails"%>
+        </div>
+        <div class="col-sm-1"></div>
       </div>
-      <div id="polls_list_div" style="display:none;">
+      <div class="clear"></div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <div id="polls_list_block">
+            <div class="poll_list_header">
+              Selected polls for invitations
+            </div>
+            <div id="polls_list_div" style="display:none;">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
       </div>
-    </div>
-    <div class="span2"></div>
+      <div class="clear"></div>
+      <div class="row" id="poll_select_box_row">
+        <div class="col-sm-1"></div>
+        <input type="hidden" id="invite_polls_list" name="invite[polls]">
+        <div class="col-sm-10 poll_select_bx_div" id="poll_for_invited_peoples">
+          <%= render partial: "invitations/poll_select_box" , locals: {polls: @polls} %>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <input  type="submit" id="invite_peoples_for_poll" class="custom-btn floatR mrgn-lft"
+            value = "Invite People" />
+          <a href="<%= invite_to_invited_peoples_invitations_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a>
+
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    <% end -%>
   </div>
-  <div class="clearboth"></div>
-  <div class="row" id="poll_select_box_row">
-    <div class="span2"></div>
-    <input type="hidden" id="invite_polls_list" name="invite[polls]"> 
-    <div class="span8 poll_select_bx_div" id="poll_for_invited_peoples">
-      <%= render partial: "invitations/poll_select_box" , locals: {polls: @polls} %>
-    </div>
-    <div class="span2"></div>
-  </div>
-  <div class="row">
-    <div class="span2"></div>
-    <div class="span8">
-      <input  type="submit" id="invite_peoples_for_poll" class="custom-btn floatR mrgn-lft" 
-        value = "Invite People" />
-      <a href="<%= invite_to_invited_peoples_invitations_path %>"  class="custom-btn floatR lnk_btn" data-dismiss="modal" value="Reset" > Reset </a> 
-      
-    </div>
-    <div class="span2"></div>
-  </div>
-<% end -%>
-<br/>
-<div class="border"></div>
+</div>

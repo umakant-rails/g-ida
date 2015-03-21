@@ -38,19 +38,19 @@ $(document).ready(function(){
   }
 
   var make_tagit = function(self, action_fire_on, input_value, keycode){
-    
+
     if( (action_fire_on != 'focusout') && (keycode != 13) ){
       var input_value = input_value.substr(0, input_value.length-1).trim();
     }
     var counter = is_already_added(input_value);
     if(validate_email(input_value) && ( counter == 0)){
-      var li_string = '<li><span class="tagit-label">'+input_value+'</span><span class="text-icon icon-remove tagit-close"></span></li>';
+      var li_string = '<li><span class="tagit-label">'+input_value+'</span><span class="text-icon fa fa-times tagit-close"></span></li>';
       var ul_txt = $(".tagit_invite_user_ul").html();
       var last_li_index = ul_txt.lastIndexOf('<li>');
-      var ul_txtt = ul_txt.substr(0,last_li_index)+li_string+ul_txt.substr(last_li_index,ul_txt.length); 
+      var ul_txtt = ul_txt.substr(0,last_li_index)+li_string+ul_txt.substr(last_li_index,ul_txt.length);
       $(".tagit_invite_user_ul").html(ul_txtt);
       $(self).val("");
-      email_add_remove_from_hidden_field(); 
+      email_add_remove_from_hidden_field();
       $("#tagit_txt_input").focus();
       $("#error_msg").hide();
       $("#invite_peoples_for_poll").attr('disabled', false);
@@ -64,7 +64,7 @@ $(document).ready(function(){
       }
       if(action_fire_on == 'keyup'){
         input_value = input_value.substr(0, input_value.trim().length);
-        $("#tagit_txt_input").val(input_value); 
+        $("#tagit_txt_input").val(input_value);
       }
       $("#tagit_txt_input").focus();
      }
@@ -99,7 +99,7 @@ $(document).ready(function(){
       return false;
     }
   });
-  
+
   $(document).on('focusout', '#tagit_txt_input', function(event){
     var input_value = $(this).val();
     if ( input_value.length > 1) {
@@ -111,7 +111,7 @@ $(document).ready(function(){
     $(this).parent().remove();
     email_add_remove_from_hidden_field();
     if( $(".tagit_invite_user_ul").find('li').length > 1){
-      $("#invite_peoples_for_poll").attr('disabled', false); 
+      $("#invite_peoples_for_poll").attr('disabled', false);
     } else if($(".tagit_invite_user_ul").find('li').length == 1){
       $("#invite_peoples_for_poll").attr('disabled', true);
       $("#error_msg").hide();
